@@ -17,7 +17,7 @@ This model was later used to predict the classes of a test set containing 20 ent
 
 ## Packages
 
-Firstly, the appropriate packages to be used throughout the project were loaded.
+Firstly, the appropriate packages to be used throughout the project were loaded, as well as setting the seed for reproducibility.
 
 
 
@@ -28,6 +28,7 @@ library(caret)
 library(randomForest)
 library(parallel)
 library(doParallel)
+set.seed(123)
 ```
 
 ## Data
@@ -167,34 +168,34 @@ confusionMatrix(predictiontest, testing$classe)
 ## 
 ##           Reference
 ## Prediction    A    B    C    D    E
-##          A 1671    1    0    0    0
-##          B    3 1138    2    0    0
-##          C    0    0 1020    3    0
-##          D    0    0    4  961    6
-##          E    0    0    0    0 1076
+##          A 1674    0    0    0    0
+##          B    0 1139    1    0    0
+##          C    0    0 1025    0    0
+##          D    0    0    0  964    3
+##          E    0    0    0    0 1079
 ## 
 ## Overall Statistics
-##                                          
-##                Accuracy : 0.9968         
-##                  95% CI : (0.995, 0.9981)
-##     No Information Rate : 0.2845         
-##     P-Value [Acc > NIR] : < 2.2e-16      
-##                                          
-##                   Kappa : 0.9959         
-##                                          
-##  Mcnemar's Test P-Value : NA             
+##                                           
+##                Accuracy : 0.9993          
+##                  95% CI : (0.9983, 0.9998)
+##     No Information Rate : 0.2845          
+##     P-Value [Acc > NIR] : < 2.2e-16       
+##                                           
+##                   Kappa : 0.9991          
+##                                           
+##  Mcnemar's Test P-Value : NA              
 ## 
 ## Statistics by Class:
 ## 
 ##                      Class: A Class: B Class: C Class: D Class: E
-## Sensitivity            0.9982   0.9991   0.9942   0.9969   0.9945
-## Specificity            0.9998   0.9989   0.9994   0.9980   1.0000
-## Pos Pred Value         0.9994   0.9956   0.9971   0.9897   1.0000
-## Neg Pred Value         0.9993   0.9998   0.9988   0.9994   0.9988
+## Sensitivity            1.0000   1.0000   0.9990   1.0000   0.9972
+## Specificity            1.0000   0.9998   1.0000   0.9994   1.0000
+## Pos Pred Value         1.0000   0.9991   1.0000   0.9969   1.0000
+## Neg Pred Value         1.0000   1.0000   0.9998   1.0000   0.9994
 ## Prevalence             0.2845   0.1935   0.1743   0.1638   0.1839
-## Detection Rate         0.2839   0.1934   0.1733   0.1633   0.1828
-## Detection Prevalence   0.2841   0.1942   0.1738   0.1650   0.1828
-## Balanced Accuracy      0.9990   0.9990   0.9968   0.9974   0.9972
+## Detection Rate         0.2845   0.1935   0.1742   0.1638   0.1833
+## Detection Prevalence   0.2845   0.1937   0.1742   0.1643   0.1833
+## Balanced Accuracy      1.0000   0.9999   0.9995   0.9997   0.9986
 ```
 
 From this, we can see that the overall accuracy of the model is 0.999, hence the out of sample error rate is 0.001. For a graphical display of the confusion matrix, see appendix 4.
